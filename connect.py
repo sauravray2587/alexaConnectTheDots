@@ -48,13 +48,13 @@ def startGame(startNode, endNode):
 		else:
 			curNode = text
 
-		if checkConnection(prevNode, curNode) is True:
+		if (checkConnection(prevNode, curNode) or findSimilarity(prevNode,curNode)) is True:
 			prevNode = curNode
 		else:
-			print("Try Again")
+			print("Not a Valid Connection, Try Again.")
 
 
-if __name__ == "__main__":
+def takeInputs():
 	startNode = input()
 	endNode = input()
 	startGame(startNode, endNode)
